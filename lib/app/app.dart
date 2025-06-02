@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       locale: const Locale('en', 'US'),
       routerConfig: router,
       theme: themeData,
+      darkTheme: themeDataDark,
       title: kAppName,
     );
   }
