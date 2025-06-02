@@ -1,2 +1,2 @@
-String kAppName = 'SwasthaAI';
-String kFontPoppins = 'Poppins';
+const String kAppName = 'SwasthaAI';
+const String kFontPlusJakartaSans = 'PlusJakartaSans';
