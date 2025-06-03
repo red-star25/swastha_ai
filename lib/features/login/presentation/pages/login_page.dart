@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
-import 'package:swastha_ai/core/constants/constants.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_state.dart';
 import 'package:swastha_ai/features/login/presentation/widgets/login_form.dart';
@@ -46,7 +45,7 @@ class LoginPage extends StatelessWidget {
                     Assets.icons.appIconNoBg.image(width: 100, height: 100),
                     const SizedBox(height: 16),
                     Text(
-                      kAppName,
+                      "Login",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 28,
@@ -54,7 +53,7 @@ class LoginPage extends StatelessWidget {
                         color: AppColors.white,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 20),
                     const LoginForm(),
                     const SizedBox(height: 16),
                     TextButton(

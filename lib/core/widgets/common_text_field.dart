@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
 
-class LoginTextField extends StatelessWidget {
+class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
   final String labelText;
   final TextInputType? keyboardType;
@@ -9,8 +9,11 @@ class LoginTextField extends StatelessWidget {
   final IconData prefixIcon;
   final Widget? suffixIcon;
   final String? Function(String?)? validator;
+  final bool isPassword;
+  final VoidCallback? onTogglePassword;
+  final bool isPasswordVisible;
 
-  const LoginTextField({
+  const CommonTextField({
     super.key,
     required this.controller,
     required this.labelText,
@@ -19,6 +22,9 @@ class LoginTextField extends StatelessWidget {
     required this.prefixIcon,
     this.suffixIcon,
     this.validator,
+    this.isPassword = false,
+    this.onTogglePassword,
+    this.isPasswordVisible = false,
   });
 
   @override
@@ -26,13 +32,22 @@ class LoginTextField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       keyboardType: keyboardType,
-      obscureText: obscureText,
+      obscureText: isPassword ? !isPasswordVisible : obscureText,
       style: TextStyle(color: AppColors.white),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: TextStyle(color: AppColors.white),
         prefixIcon: Icon(prefixIcon, color: AppColors.white),
-        suffixIcon: suffixIcon,
+        suffixIcon:
+            isPassword
+                ? IconButton(
+                  icon: Icon(
+                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    color: AppColors.white,
+                  ),
+                  onPressed: onTogglePassword,
+                )
+                : suffixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: AppColors.white),
