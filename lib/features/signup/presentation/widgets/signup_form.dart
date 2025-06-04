@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:swastha_ai/common_widgets/button_widget.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
 import 'package:swastha_ai/core/widgets/common_text_field.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_state.dart';
+import 'package:swastha_ai/routes/paths.dart';
 
 class SignupForm extends StatefulWidget {
   const SignupForm({super.key});
@@ -119,14 +121,15 @@ class _SignupFormState extends State<SignupForm> {
                 textColor: AppColors.primary,
                 isLoading: state is SignupLoading,
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    context.read<SignupCubit>().signup(
-                      email: _emailController.text,
-                      password: _passwordController.text,
-                      confirmPassword: _confirmPasswordController.text,
-                      fullName: _fullNameController.text,
-                    );
-                  }
+                  context.push(Paths.verifyOTP);
+                  // if (_formKey.currentState!.validate()) {
+                  //   context.read<SignupCubit>().signup(
+                  //     email: _emailController.text,
+                  //     password: _passwordController.text,
+                  //     confirmPassword: _confirmPasswordController.text,
+                  //     fullName: _fullNameController.text,
+                  //   );
+                  // }
                 },
               );
             },

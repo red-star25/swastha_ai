@@ -4,6 +4,7 @@ import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/signup_page.dart';
+import 'package:swastha_ai/features/signup/presentation/pages/verify_otp_page.dart';
 import 'package:swastha_ai/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:swastha_ai/routes/paths.dart';
 
@@ -31,6 +32,15 @@ final router = GoRouter(
     GoRoute(
       path: Paths.welcome,
       builder: (context, state) => const WelcomePage(),
+    ),
+    GoRoute(
+      path: Paths.verifyOTP,
+      builder: (context, state) {
+        return BlocProvider(
+          create: (context) => SignupCubit(),
+          child: const VerifyOTPPage(),
+        );
+      },
     ),
   ],
 );
