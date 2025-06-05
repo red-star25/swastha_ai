@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swastha_ai/features/dashboard/presentation/pages/daily_check_in_page.dart';
 import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.dart';
-import 'package:swastha_ai/features/journel/presentation/pages/journel_page.dart';
+import 'package:swastha_ai/features/journal/presentation/pages/journal_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
