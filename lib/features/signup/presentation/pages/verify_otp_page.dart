@@ -9,6 +9,7 @@ import 'package:swastha_ai/features/signup/presentation/cubit/signup_state.dart'
 import 'package:swastha_ai/features/signup/presentation/widgets/otp_field.dart';
 import 'package:swastha_ai/features/signup/presentation/widgets/resend_section.dart';
 import 'package:swastha_ai/features/signup/presentation/widgets/verify_header.dart';
+import 'package:swastha_ai/routes/paths.dart';
 
 class VerifyOTPPage extends StatefulWidget {
   const VerifyOTPPage({super.key});
@@ -122,6 +123,7 @@ class _VerifyOTPPageState extends State<VerifyOTPPage> {
           onPressed: () {
             if (_otp.length == 4) {
               // TODO: Implement verification logic
+              context.push(Paths.dashboard);
             }
           },
         );

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
@@ -41,6 +42,10 @@ final router = GoRouter(
           child: const VerifyOTPPage(),
         );
       },
+    ),
+    GoRoute(
+      path: Paths.dashboard,
+      builder: (context, state) => const DashboardPage(),
     ),
   ],
 );

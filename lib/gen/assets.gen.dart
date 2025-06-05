@@ -19,19 +19,67 @@ class $AssetsIconsGen {
   AssetGenImage get appIconNoBg =>
       const AssetGenImage('assets/icons/app_icon_no_bg.png');
 
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/journal.svg
+  String get journal => 'assets/icons/journal.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
+  /// File path: assets/icons/settings.svg
+  String get settings => 'assets/icons/settings.svg';
+
+  /// File path: assets/icons/therapist.svg
+  String get therapist => 'assets/icons/therapist.svg';
+
   /// List of all assets
-  List<AssetGenImage> get values => [appIcon, appIconNoBg];
+  List<dynamic> get values => [
+        appIcon,
+        appIconNoBg,
+        home,
+        journal,
+        profile,
+        search,
+        settings,
+        therapist
+      ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/dash_img_1.png
+  AssetGenImage get dashImg1 =>
+      const AssetGenImage('assets/images/dash_img_1.png');
+
+  /// File path: assets/images/dash_img_2.png
+  AssetGenImage get dashImg2 =>
+      const AssetGenImage('assets/images/dash_img_2.png');
+
+  /// File path: assets/images/dash_img_3.png
+  AssetGenImage get dashImg3 =>
+      const AssetGenImage('assets/images/dash_img_3.png');
+
+  /// File path: assets/images/dash_img_4.png
+  AssetGenImage get dashImg4 =>
+      const AssetGenImage('assets/images/dash_img_4.png');
+
+  /// File path: assets/images/dash_img_5.png
+  AssetGenImage get dashImg5 =>
+      const AssetGenImage('assets/images/dash_img_5.png');
 
   /// File path: assets/images/welcome_bg.png
   AssetGenImage get welcomeBg =>
       const AssetGenImage('assets/images/welcome_bg.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [welcomeBg];
+  List<AssetGenImage> get values =>
+      [dashImg1, dashImg2, dashImg3, dashImg4, dashImg5, welcomeBg];
 }
 
 class Assets {
