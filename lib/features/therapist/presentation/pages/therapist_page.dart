@@ -65,10 +65,6 @@ class _TherapistPageState extends State<TherapistPage> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: Text('Therapists', style: AppTextTheme.h4),
         centerTitle: true,
       ),

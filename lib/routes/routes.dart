@@ -7,6 +7,10 @@ import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/signup_page.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/verify_otp_page.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/booking_appointment_page.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/confirm_appointment_page.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/feedback_page.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/therapist_details_page.dart';
 import 'package:swastha_ai/features/therapist/presentation/pages/therapist_page.dart';
 import 'package:swastha_ai/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:swastha_ai/routes/paths.dart';
@@ -56,6 +60,36 @@ final router = GoRouter(
     GoRoute(
       path: Paths.therapist,
       builder: (context, state) => const TherapistPage(),
+    ),
+    GoRoute(
+      path: Paths.therapistDetails,
+      builder:
+          (context, state) => const TherapistDetailsPage(
+            name: '',
+            title: '',
+            experience: '',
+            about: '',
+            image: '',
+            specializations: [],
+          ),
+    ),
+    GoRoute(
+      path: Paths.bookingAppointment,
+      builder: (context, state) => const BookingAppointmentPage(),
+    ),
+    GoRoute(
+      path: Paths.confirmAppointment,
+      builder:
+          (context, state) => ConfirmAppointmentPage(
+            therapistName: '',
+            therapistImage: '',
+            selectedDate: DateTime.now(),
+            selectedTime: '',
+          ),
+    ),
+    GoRoute(
+      path: Paths.feedback,
+      builder: (context, state) => FeedbackPage(therapistName: ''),
     ),
   ],
 );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
 import 'package:swastha_ai/core/constants/text_theme.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/confirm_appointment_page.dart';
 
 import '../widgets/available_times_chips.dart';
 import '../widgets/booking_calendar.dart';
@@ -88,7 +89,21 @@ class _BookingAppointmentPageState extends State<BookingAppointmentPage> {
                 enabled: _selectedDay != null && _selectedTime != null,
                 onPressed:
                     (_selectedDay != null && _selectedTime != null)
-                        ? () {}
+                        ? () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => ConfirmAppointmentPage(
+                                    therapistName: 'Dr. Sarah Miller',
+                                    therapistImage:
+                                        'assets/images/therapist.png',
+                                    selectedDate: _selectedDay!,
+                                    selectedTime: _selectedTime!,
+                                  ),
+                            ),
+                          );
+                        }
                         : null,
               ),
               const SizedBox(height: 24),
