@@ -26,6 +26,13 @@ class AppTextTheme {
     height: 1.2,
   );
 
+  static TextStyle get h4 => const TextStyle(
+    fontFamily: _fontFamily,
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    height: 1.2,
+  );
+
   // Body text
   static TextStyle get bodyLarge => const TextStyle(
     fontFamily: _fontFamily,

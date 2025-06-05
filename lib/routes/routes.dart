@@ -1,16 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:swastha_ai/features/journel/presentation/pages/journel_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/signup_page.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/verify_otp_page.dart';
+import 'package:swastha_ai/features/therapist/presentation/pages/therapist_page.dart';
 import 'package:swastha_ai/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:swastha_ai/routes/paths.dart';
 
 final router = GoRouter(
-  initialLocation: Paths.welcome,
+  initialLocation: Paths.dashboard,
   routes: [
     GoRoute(
       path: Paths.login,
@@ -46,6 +48,14 @@ final router = GoRouter(
     GoRoute(
       path: Paths.dashboard,
       builder: (context, state) => const DashboardPage(),
+    ),
+    GoRoute(
+      path: Paths.journal,
+      builder: (context, state) => const JournalPage(),
+    ),
+    GoRoute(
+      path: Paths.therapist,
+      builder: (context, state) => const TherapistPage(),
     ),
   ],
 );

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
 import 'package:swastha_ai/gen/assets.gen.dart';
+import 'package:swastha_ai/routes/paths.dart';
 
 class AppBottomNavBar extends StatelessWidget {
   final int selectedIndex;
-  final ValueChanged<int> onTap;
 
-  const AppBottomNavBar({
-    super.key,
-    required this.selectedIndex,
-    required this.onTap,
-  });
+  const AppBottomNavBar({super.key, required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,22 @@ class AppBottomNavBar extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           currentIndex: selectedIndex,
-          onTap: onTap,
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                context.go(Paths.dashboard);
+                break;
+              case 1:
+                context.go(Paths.journal);
+                break;
+              case 2:
+                context.go(Paths.therapist);
+                break;
+              case 3:
+                context.go(Paths.profile);
+                break;
+            }
+          },
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
           showUnselectedLabels: true,
