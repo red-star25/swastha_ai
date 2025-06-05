@@ -4,6 +4,7 @@ import 'package:swastha_ai/features/dashboard/presentation/pages/daily_check_in_
 import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:swastha_ai/features/journal/presentation/pages/journal_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
+import 'package:swastha_ai/features/login/presentation/pages/forgot_password_page.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
 import 'package:swastha_ai/features/profile/presentation/pages/notification_settings_page.dart';
 import 'package:swastha_ai/features/profile/presentation/pages/profile_page.dart';
@@ -105,6 +106,10 @@ final router = GoRouter(
     GoRoute(
       path: '/notifications',
       builder: (context, state) => const NotificationSettingsPage(),
+    ),
+    GoRoute(
+      path: Paths.forgotPassword,
+      builder: (context, state) => const ForgotPasswordPage(),
     ),
   ],
 );

@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
             SnackBar(content: Text(state.message), backgroundColor: Colors.red),
           );
         } else if (state is LoginSuccess) {
-          // TODO: Navigate to home page or handle successful login
+          context.go(Paths.dashboard);
         }
       },
       child: Scaffold(
