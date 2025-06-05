@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swastha_ai/features/dashboard/presentation/pages/daily_check_in_page.dart';
 import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:swastha_ai/features/journel/presentation/pages/journel_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
@@ -90,6 +91,10 @@ final router = GoRouter(
     GoRoute(
       path: Paths.feedback,
       builder: (context, state) => FeedbackPage(therapistName: ''),
+    ),
+    GoRoute(
+      path: Paths.dailyCheckIn,
+      builder: (context, state) => const DailyCheckInPage(),
     ),
   ],
 );

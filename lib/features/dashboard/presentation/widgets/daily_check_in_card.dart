@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swastha_ai/core/constants/colors.dart';
+import 'package:swastha_ai/features/dashboard/presentation/pages/daily_check_in_page.dart';
 import 'package:swastha_ai/gen/assets.gen.dart';
 
 class DailyCheckInCard extends StatelessWidget {
@@ -42,7 +43,14 @@ class DailyCheckInCard extends StatelessWidget {
                       vertical: 10,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DailyCheckInPage(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     'Start',
                     style: TextStyle(color: Colors.white),

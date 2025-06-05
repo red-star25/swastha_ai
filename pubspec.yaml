@@ -48,6 +48,7 @@ dependencies:
   gap: ^3.0.1
   flutter_svg: ^2.1.0
   table_calendar: ^3.2.0
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
