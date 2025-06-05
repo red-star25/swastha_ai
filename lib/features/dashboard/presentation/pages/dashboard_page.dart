@@ -22,6 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
+        leading: const SizedBox.shrink(),
         title: Text(
           kAppName,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
