@@ -5,6 +5,8 @@ import 'package:swastha_ai/features/dashboard/presentation/pages/dashboard_page.
 import 'package:swastha_ai/features/journal/presentation/pages/journal_page.dart';
 import 'package:swastha_ai/features/login/presentation/cubit/login_cubit.dart';
 import 'package:swastha_ai/features/login/presentation/pages/login_page.dart';
+import 'package:swastha_ai/features/profile/presentation/pages/notification_settings_page.dart';
+import 'package:swastha_ai/features/profile/presentation/pages/profile_page.dart';
 import 'package:swastha_ai/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/signup_page.dart';
 import 'package:swastha_ai/features/signup/presentation/pages/verify_otp_page.dart';
@@ -17,7 +19,7 @@ import 'package:swastha_ai/features/welcome/presentation/pages/welcome_page.dart
 import 'package:swastha_ai/routes/paths.dart';
 
 final router = GoRouter(
-  initialLocation: Paths.dashboard,
+  initialLocation: Paths.welcome,
   routes: [
     GoRoute(
       path: Paths.login,
@@ -95,6 +97,14 @@ final router = GoRouter(
     GoRoute(
       path: Paths.dailyCheckIn,
       builder: (context, state) => const DailyCheckInPage(),
+    ),
+    GoRoute(
+      path: Paths.settings,
+      builder: (context, state) => const ProfilePage(),
+    ),
+    GoRoute(
+      path: '/notifications',
+      builder: (context, state) => const NotificationSettingsPage(),
     ),
   ],
 );

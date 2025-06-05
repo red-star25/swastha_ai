@@ -4,6 +4,7 @@ import 'package:swastha_ai/core/constants/constants.dart';
 import 'package:swastha_ai/features/dashboard/presentation/widgets/daily_check_in_card.dart';
 import 'package:swastha_ai/features/dashboard/presentation/widgets/explore_section.dart';
 import 'package:swastha_ai/features/dashboard/presentation/widgets/recommended_section.dart';
+import 'package:swastha_ai/features/profile/presentation/pages/notification_settings_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -23,12 +24,19 @@ class _DashboardPageState extends State<DashboardPage> {
         centerTitle: true,
         title: Text(
           kAppName,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.settings, color: Colors.black),
-            onPressed: () {},
+            icon: const Icon(Icons.notifications_none, color: Colors.black),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationSettingsPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -38,21 +46,21 @@ class _DashboardPageState extends State<DashboardPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 8),
-            Text(
+            const Text(
               'Welcome back, Alex',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             const DailyCheckInCard(),
             const SizedBox(height: 32),
-            Text(
+            const Text(
               'Explore',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             const ExploreSection(),
             const SizedBox(height: 32),
-            Text(
+            const Text(
               'Recommended for you',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -62,7 +70,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ],
         ),
       ),
-      bottomNavigationBar: AppBottomNavBar(selectedIndex: 0),
+      bottomNavigationBar: const AppBottomNavBar(selectedIndex: 0),
     );
   }
 }

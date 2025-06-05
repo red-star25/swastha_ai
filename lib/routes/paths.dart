@@ -13,4 +13,5 @@ class Paths {
   static const String confirmAppointment = '/confirm-appointment';
   static const String feedback = '/feedback';
   static const String dailyCheckIn = '/daily-check-in';
+  static const String settings = '/profile';
 }
